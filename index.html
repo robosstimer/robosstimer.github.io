@@ -28,12 +28,7 @@
                         new Date().toString();
                         }, 1000);
         
-        document.getElementById("addTimeBtn1").onclick = function() {
-            var Now=new Date();
-            var Input=document.getElementById("myInput1").value;
-            var Respwan=new Date(Now.getTime()+(Input*1000*60));
-            document.getElementById("mvpTimeDiv1").innerHTML = Respwan.toString();
-        }
+        
     </script>
         
         <div class="col-sm-12"><table rel="datatable" class="table table-hover table-bordered dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
@@ -57,12 +52,17 @@
                         <span class="label label-warning">中型</span>
                     </td>
                     <td>524,587</td>
-                    <td>
-                    <div id="mvpTimeDiv1">
-                    </div>
-                    </td>
+                    <td><div id="mvpTimeDiv1"></div></td>
                     <td><input type="text" id="myInput1"></td>
                     <td><button id="addTimeBtn1">更新</button></td>
+                    <script>
+                        document.getElementById("addTimeBtn1").onclick = function() {
+                        var Now=new Date();
+                        var Input=document.getElementById("myInput1").value;
+                        var Respwan=new Date(Now.getTime()+(Input*1000*60));
+                        document.getElementById("mvpTimeDiv1").innerHTML = Respwan.toString();
+                        }
+                    </script>
                 </tr><tr role="row" class="even" align="center">
                     <td data-sort="30" class="sorting_1">Lv.30</td>
                     <td align="left">
