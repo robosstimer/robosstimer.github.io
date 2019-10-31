@@ -16,12 +16,25 @@
 		</h1>
 	</div>
     
-    <script language=”javascript”>
-        var name = 'Bob'
-        var age = 15
+    <div id="carsDiv">
+    </div>
+    <button id="addCarBtn">Add Car</button>
+    <script>
+        var current = 0;
+        var cars = new Array(5);
+        cars[0] = "Audi";
+        cars[1] = "Bentley";
+        cars[2] = "Mercedes";
+        cars[3] = "Mini";
+        cars[4] = "BMW";
+        document.getElementById("addCarBtn").onclick = function() {
+            if (!(current > cars.length - 1))
+            {
+                document.getElementById("carsDiv").innerHTML += cars[current] + "<br />";
+                current++;
+            }
+        }
     </script>
-    
-    <div onload="document.innerHTML(name + ' is ' + age)"></div>
         
         <div class="col-sm-12"><table rel="datatable" class="table table-hover table-bordered dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
             <thead>
