@@ -60,7 +60,8 @@
                         var Now=new Date();
                         var Input=document.getElementById("myInput1").value;
                         var Respwan=new Date(Now.getTime()+(Input*1000*60));
-                        document.getElementById("mvpTimeDiv1").innerHTML = Respwan.toString();
+                        var hourRespwan = ((Respwan.getMonth()+1)>=10?+(Respwan.getMonth()+1):"0"+(Respwan.getMonth()+1))+"-"+((Respwan.getDate())>=10?Respwan.getDate():'0'+Respwan.getDate())；
+                        document.getElementById("mvpTimeDiv1").innerHTML = hourRespwan;
                         }
                     </script>
                 </tr><tr role="row" class="even" align="center">
