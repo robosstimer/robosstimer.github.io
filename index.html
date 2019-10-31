@@ -27,12 +27,17 @@
         cars[2] = "Mercedes";
         cars[3] = "Mini";
         cars[4] = "BMW";
+        var Now=new Date();
+        var Compare=new Date(2006,12-1,31);
         document.getElementById("addCarBtn").onclick = function() {
-            if (!(current > cars.length - 1))
-            {
-                document.getElementById("carsDiv").innerHTML += cars[current] + "<br />";
-                current++;
-            }
+            //if (!(current > cars.length - 1))
+            //{
+            //    document.getElementById("carsDiv").innerHTML += cars[current] + "<br />";
+            //    current++;
+            //}
+            Result=(Compare.getTime()-Now.getTime())/(24*60*60*1000);
+            Result=Math.ceil(Result);
+            document.getElementById("carsDiv").innerHTML = Result +"</b>");
         }
     </script>
         
