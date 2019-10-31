@@ -16,29 +16,23 @@
 		</h1>
 	</div>
     
-    <div id="carsDiv">
+    <div id="currentTimeDiv">
     </div>
-    <button id="addCarBtn">Add Car</button>
+    
+    
+    
     <script>
-        var current = 0;
-        var cars = new Array(5);
-        cars[0] = "Audi";
-        cars[1] = "Bentley";
-        cars[2] = "Mercedes";
-        cars[3] = "Mini";
-        cars[4] = "BMW";
-        var Now=new Date();
-        var Compare=new Date(2006,12-1,31);
-        document.getElementById("addCarBtn").onclick = function() {
-            //if (!(current > cars.length - 1))
-            //{
-            //    document.getElementById("carsDiv").innerHTML += cars[current] + "<br />";
-            //    current++;
-            //}
-            document.getElementById("carsDiv").innerHTML += cars[current] + "<br />";
-            //Result=(Compare.getTime()-Now.getTime())/(24*60*60*1000);
-            //Result=Math.ceil(Result);
-            //document.getElementById("carsDiv").innerHTML = Result +"</b>");
+        document.getElementById("currentTimeDiv").innerHTML =  "現在時間: " + new Date().toString();
+            setInterval(function(){
+                        document.getElementById("currentTimeDiv").innerHTML =  "現在時間: " +
+                        new Date().toString();
+                        }, 1000);
+        
+        document.getElementById("addTimeBtn1").onclick = function() {
+            var Now=new Date();
+            var Input=document.getElementById("myInput1").value;
+            var Respwan=new Date(Now.getTime()+(Input*1000*60));
+            document.getElementById("mvpTimeDiv1").innerHTML = Respwan.toString();
         }
     </script>
         
@@ -48,9 +42,9 @@
                     <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 48px;" aria-sort="ascending" aria-label="等級: activate to sort column descending">等級</th>
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;" aria-label="怪物名字: activate to sort column ascending" width="250">怪物名字</th>
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 83px;" aria-label="HP: activate to sort column ascending">HP</th>
-                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 60px;" aria-label="Base: activate to sort column ascending">倒數計時</th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 60px;" aria-label="Base: activate to sort column ascending">重生時間</th>
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 60px;" aria-label="Job: activate to sort column ascending">時間(分鐘)</th>
-                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px;" aria-label="Hp/B: activate to sort column ascending"><span title="" data-toggle="tooltip" data-original-title="Hp/Base (越低越好)">確認/重設</span></th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px;" aria-label="Hp/B: activate to sort column ascending"><span title="" data-toggle="tooltip" data-original-title="Hp/Base (越低越好)">確認</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -63,9 +57,12 @@
                         <span class="label label-warning">中型</span>
                     </td>
                     <td>524,587</td>
-                    <td>5,953</td>
-                    <td>5,260</td>
-                    <td>88.1</td>
+                    <td>
+                    <div id="mvpTimeDiv1">
+                    </div>
+                    </td>
+                    <td><input type="text" id="myInput1"></td>
+                    <td><button id="addTimeBtn1">更新</button></td>
                 </tr><tr role="row" class="even" align="center">
                     <td data-sort="30" class="sorting_1">Lv.30</td>
                     <td align="left">
