@@ -17,13 +17,11 @@
 	</div>
     
     <script language=”javascript”>
-        var Now=new Date();var Compare=new Date(2006,12-1,31);
-        Result=(Compare.getTime()-Now.getTime())/(24*60*60*1000);
-        Result=Math.ceil(Result);
-        document.getElementsById('timer').innerHTML = "write me to the screen";
+        var name = 'Bob'
+        var age = 15
     </script>
     
-    <div id="timer"></div>
+    <div onload="document.innerHTML(name + ' is ' + age)">
         
         <div class="col-sm-12"><table rel="datatable" class="table table-hover table-bordered dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
             <thead>
