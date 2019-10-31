@@ -16,11 +16,13 @@
 		</h1>
 	</div>
     
-    <button onclick="setTimeout(myFunction, 3000)">试一试</button>
+    <button onclick="clearInterval(myVar)">停止时间</button>
     
     <script>
-        function myFunction() {
-            alert('Hello');
+        var myVar = setInterval(myTimer, 1000);
+        function myTimer() {
+            var d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
         }
     </script>
     
