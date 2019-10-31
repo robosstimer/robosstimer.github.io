@@ -60,8 +60,7 @@
                         var Now=new Date();
                         var Input=document.getElementById("myInput1").value;
                         var Respwan=new Date(Now.getTime()+(Input*1000*60));
-                        var hourRespwan = //((Respwan.getMonth()+1)>=10?+(Respwan.getMonth()+1):"0"+(Respwan.getMonth()+1))+":"+
-                        ((Respwan.getDate())>=10?+Respwan.getDate():"0"+Respwan.getDate())；
+                        var hourRespwan = ((Respwan.getHours())>=10?+(Respwan.getHours()):"0"+(Respwan.getHours()))+":"+((Respwan.getMinutes())>=10?+Respwan.getMinutes():"0"+Respwan.getMinutes())+":"+((Respwan.getSeconds())>=10?+Respwan.getSeconds():"0"+Respwan.getSeconds());
                         document.getElementById("mvpTimeDiv1").innerHTML = hourRespwan;
                         }
                     </script>
